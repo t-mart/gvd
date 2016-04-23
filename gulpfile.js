@@ -10,13 +10,21 @@ gulp.task("transpile", function () {
     .pipe(gulp.dest("lib"));
 });
 
-// gulp.task("test", ['transpile'], function () {
-//   return gulp.src("test/example.js")
-//       .pipe(babel({
-//         plugins: ["../lib/index.js"]
-//       }))
-//       .pipe(printStream());
-// });
+gulp.task("test", ['transpile'], function () {
+  return gulp.src("test/example.js")
+      .pipe(babel({
+        plugins: ["../lib/index.js"]
+      }))
+      .pipe(printStream());
+});
+
+gulp.task("testgv", ['transpile'], function () {
+  return gulp.src("test/gorillavidscript.js")
+    .pipe(babel({
+      plugins: ["../lib/index.js"]
+    }))
+    .pipe(printStream());
+});
 
 var watcher = gulp.watch(['src/*.js'], ['transpile']);
 watcher.on('change', function(event) {
