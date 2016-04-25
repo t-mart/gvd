@@ -25,6 +25,8 @@
     "babylon": "^6.7.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-util": "^3.0.7",
     "lodash": "^4.11.1",
     "through2": "^2.0.1"
   }
